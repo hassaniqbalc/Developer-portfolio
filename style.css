@@ -1,4 +1,17 @@
 .notify{
+    color:rgb(100, 230, 40);
+    margin:0 auto;
+
+    background:rgb(100, 18, 233);
+    padding: 10px 5px;
+    margin-top: 5px;
+    border-radius: 15px;
     display: none;
-    }
-    
+}
+
+
+
+
+
+
+

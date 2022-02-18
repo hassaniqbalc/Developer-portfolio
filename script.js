@@ -1,36 +1,42 @@
-// function incomeBalance() {
-//     let incomeField = document.getElementById('income-field')
-//     let incomeValue = incomeField.value
-//     let balanceField = document.getElementById('balance-field')
-//     let balanceValue = balanceField.value}
-// 
+let incomeField = document.getElementById('income-field')
+let expensesField = document.getElementById('expenses-field')
+let balanceField = document.getElementById('balance-field')
 
 
+// Income & Expense calculation
 function calculation() {
-    let foodExpenses = document.getElementById('food-input').value;
 
-    let rentExpenses = document.getElementById('rent-input').value;
-
-    let clothesExpenses = document.getElementById('clothes-input').value;
-
+    let foodInput = document.getElementById('food-input');
+    let foodExpenses = foodInput.value
+    let rentInput = document.getElementById('rent-input');
+    let rentExpenses = rentInput.value
+    let clothesInput = document.getElementById('clothes-input');
+    let clothesExpenses = clothesInput.value
     let totalExp = parseFloat(foodExpenses) + parseFloat(rentExpenses) + parseFloat(clothesExpenses)
 
-
-    let expensesField = document.getElementById('expenses-field')
     expensesField.value = totalExp
 
-    let incomeField = document.getElementById('income-field')
     let incomeValue = incomeField.value
-    let balanceField = document.getElementById('balance-field')
+
     balanceField.value = incomeValue - totalExp
-    // balanceValue = incomeValue - totalExp
+    if (incomeField.value < 0 || foodInput.value < 0 || rentInput.value < 0 || clothesInput.value < 0) {
+        const errmsg = document.getElementById('notify-error')
+        errmsg.style.display = 'block'
+        incomeField.value = 0
+        foodInput.value = 0
+        rentInput.value = 0
+        clothesInput.value = 0
+        expensesField.value = 0
+        balanceField.value = 0
+    }
+
 }
+
+// Saving calculation
 document.getElementById('save-button').addEventListener(
     'click', function () {
-        // incomeBalance()
-        let incomeField = document.getElementById('income-field')
         let incomeValue = incomeField.value
-        let balanceField = document.getElementById('balance-field')
+
         let balanceValue = balanceField.value
 
         let saveField = document.getElementById('save-field')
@@ -42,7 +48,11 @@ document.getElementById('save-button').addEventListener(
 
         let remainingAmount = document.getElementById('remaining-amount')
         remainingAmount.value = balanceValue - savingCalulation
+        if (savingAmount.value > remainingAmount.value) {
+            const errmsg1 = document.getElementById('notify-error1')
+            errmsg1.style.display = 'block'
 
+        }
 
     }
 )

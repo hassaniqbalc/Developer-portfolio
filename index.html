@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="flex justify-center">
+        <h1 class="text-5xl mt-16 text-slate-600">Saving plan </h1>
+        <img class="mt-12" src="tree.jpg" alt="">
+    </header>
+
+    <section class="  mt-20 grid  md:grid-cols-2 sm:grid-cols-1 justify-items-center">
+        <img src="coin.jpg" alt="">
+        <div class="bg-gray-100 ">
+            <h1 class="  text-3xl mb-10 ">Income</h1>
+            <label class="text-2xl" for=>Income:</label>
+            <input id="income-field" class=" bg-gray-300" type="number">
+            <h1 class="text-3xl mt-10  ">Expenses</h1>
+            <div class="mt-10 grid grid-cols-1 ">
+                <label class="text-2xl" for=>Food:</label>
+                <input id="food-input" type="number" class=" bg-gray-300 ">
+                <label class="text-2xl" for=>Rent:</label>
+                <input id="rent-input" class=" bg-gray-300" type="number">
+                <label class="text-2xl" for=>Clothes:</label>
+                <input id="clothes-input" class=" bg-gray-300" type="number">
+            </div>
+            <div class="grid grid-cols-1 justify-items-center">
+                <button Class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4" onclick="calculation()">
+                    Calculate </button>
+                <div>
+                    <label class="text-2xl" for=>Total Expenses :</label>
+                    <input id="expenses-field" class="bg-gray-300" type="number">
+                </div>
+                <div>
+                    <label class="text-2xl" for=>Balance :</label>
+                    <input id="balance-field" class="bg-gray-300" type="number">
+                </div>
+            </div>
+
+            <div class="flex ">
+
+
+                <div>
+                    <label class="text-2xl" for=>Save :</label>
+                    <input id="save-field" class="bg-gray-300 ml-5" type="number">
+
+                </div>
+                <div class="flex">
+                    <h1 class="text-2xl ml-5 ">%</h1>
+                    <button id="save-button" Class="ml-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ">
+                        Save</button>
+                </div>
+
+
+            </div>
+            <div>
+                <label class="text-2xl" for=>Saving Amount :</label>
+                <input id="saving-amount" class="bg-gray-300" type="number">
+                <div>
+                    <label class="text-2xl" for=>Remaining Balance :</label>
+                    <input id="remaining-amount" class="bg-gray-300" type="number">
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="message-division">
+            <p id="notify-error" class="notify">Please enter valid and positive number</p>
+
+        </div>
+
+    </section>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
